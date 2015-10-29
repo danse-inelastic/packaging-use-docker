@@ -7,6 +7,7 @@ setup(name='danse.ins.dsm',
       author='Jiao Lin',
       author_email='jiao.lin@gmail.com',
       url='https://github.com/danse-inelastic/dsm',
+      requires = ["danse.us>=1.0"],
       packages=['danse.ins.dsm'],
       package_dir = {'danse.ins.dsm': '.'},
      )
