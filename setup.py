@@ -2,7 +2,7 @@
 
 from distutils.core import setup
 setup(name='danse.ins.dsm',
-      version='0.1.1',
+      version='0.1.2',
       description='Data stream model',
       author='Jiao Lin',
       author_email='jiao.lin@gmail.com',
