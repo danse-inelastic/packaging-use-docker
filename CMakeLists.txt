@@ -10,10 +10,6 @@ set(LICENSE "BSD")
 set(RPM_APP_GROUP "Development/Tools")
 set(GITHUB_URL "https://github.com/danse-inelastic/dsm")
 
-# extra dependencies that cannot be put into CPACK
-# PyCifRW
-
-
 # variables
 set (PYBINDING_NAME "${PROJECT_NAME}module")
 set (LIB_NAME "danse_ins_${PROJECT_NAME}")
