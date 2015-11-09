@@ -16,7 +16,7 @@ PROJECT = dsm
 #--------------------------------------------------------------------------
 #
 
-BUILD_DIRS = python
+BUILD_DIRS = dsm
 
 OTHER_DIRS = \
 
