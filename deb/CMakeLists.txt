@@ -5,6 +5,7 @@ configure_file(prepare/run.in prepare/run)
 
 configure_file(build/Dockerfile.in build/Dockerfile)
 configure_file(build/run.in build/run)
+configure_file(build/upload.in build/upload)
 
 configure_file(test/Dockerfile.in test/Dockerfile)
 configure_file(test/run.in test/run)
@@ -28,3 +29,10 @@ add_custom_target(
   COMMAND bash run
   WORKING_DIRECTORY test
   )
+
+add_custom_target(
+  upload-deb
+  COMMAND bash upload
+  WORKING_DIRECTORY build
+  )
+add_dependencies(upload-deb build-deb)
