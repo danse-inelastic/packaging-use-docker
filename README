@@ -1,27 +1,16 @@
-Data stream model helps developers to build "chains" of connected 
-computing nodes and run them. 
-A computing node has input/ouput sockets, and the "dsm runner"
-is responsible to carry "data streams" through the "chains" 
-and feed "data streams" to computing nodes.
+To build src rpm:
 
-Usage:
+ $ git clone <repo>/dsm
+ $ mkdir build
+ $ cd build
+ $ cmake ../dsm
+ $ (sudo) make build-srpm
 
- Please read the main function in Composite.py for an example.
+src rpm will be in docker/srpm/build/SRPMS/
 
-Notes:
+Upload it to release site.
 
- 1. Developers are responsible to 
-    * build computing nodes (with i/o sockets)
- 2  Developers or Users are responsible to
-    * specify connections of computing nodes
+Then test the src rpm by
 
-Hints for developers:
-
- 1. Read tests in source codes to understand how to use dsm. 
-    Start with Composite.py and Runner.py is a good idea
-
-Limitations:
- 1. No loops are allowed.
- 2. Currently only a trivial implementation of "runner" exists. So data streams
-    are limited in one physical machine.
+ $ (sudo) make test-srpm
 
