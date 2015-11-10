@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo rm -rf SRPMS
 IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-srpm
 docker build -t $IMG --no-cache .
 docker run -v $PWD:/OUTPUT $IMG mv /work/build/rpm_build/SRPMS /OUTPUT

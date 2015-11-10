@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+package_cloud yank ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/fedora/21 ${PKG_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.src.rpm
+package_cloud push ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/fedora/21 SRPMS/${PKG_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.src.rpm
