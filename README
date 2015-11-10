@@ -1,9 +1,9 @@
 To build src rpm:
 
- $ git clone <repo>/dsm
+ $ git clone <repo>/<pkg>
  $ mkdir build
  $ cd build
- $ cmake ../dsm
+ $ cmake ../<pkg>
  $ (sudo) make build-srpm
 
 src rpm will be in docker/srpm/build/SRPMS/
