@@ -1,4 +1,4 @@
-FROM ${DOCKER_ORG_NAME}/${PKG_NAME}-srpm-init .
+FROM ${DOCKER_ORG_NAME}/${PKG_NAME}-srpm-init
 
 MAINTAINER "Jiao Lin <jiao.lin@gmail.com>"
 
