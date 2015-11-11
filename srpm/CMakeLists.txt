@@ -1,5 +1,8 @@
 # docker 
 
+configure_file(init/Dockerfile init/Dockerfile)
+configure_file(init/run.in init/run)
+
 configure_file(prepare/Dockerfile prepare/Dockerfile)
 configure_file(prepare/run.in prepare/run)
 
@@ -15,10 +18,17 @@ configure_file(test-rpm/Dockerfile.in test-rpm/Dockerfile)
 configure_file(test-rpm/run.in test-rpm/run)
 
 add_custom_target( 
+  build-srpm-init
+  COMMAND bash run
+  WORKING_DIRECTORY init
+  )
+
+add_custom_target( 
   build-srpm-deps
   COMMAND bash run
   WORKING_DIRECTORY prepare
   )
+add_dependencies(build-srpm-deps build-srpm-init)
 
 # output under ..../build/SRPMS/
 add_custom_target( 
