@@ -11,6 +11,9 @@ configure_file(test/Dockerfile.in test/Dockerfile)
 configure_file(test/run.in test/run)
 configure_file(test/upload.in test/upload)
 
+configure_file(test-rpm/Dockerfile.in test-rpm/Dockerfile)
+configure_file(test-rpm/run.in test-rpm/run)
+
 add_custom_target( 
   build-srpm-deps
   COMMAND bash run
