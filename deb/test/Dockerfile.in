@@ -5,3 +5,5 @@ MAINTAINER "Jiao Lin <jiao.lin@gmail.com>"
 RUN apt-get install curl
 RUN curl -s https://packagecloud.io/install/repositories/${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/script.deb.sh | bash
 RUN apt-get install ${PKG_NAME}
+
+RUN ${DOCKER_PKGING_TEST_DEB}
