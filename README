@@ -1,4 +1,10 @@
-To major commands:
+Problems:
+* rpm and deb releases are treated differently:
+  - rpm: source rpm
+  - deb: binary deb
+
+
+Two major commands:
 
  $ make test-deb
  $ make test-rpm
@@ -18,6 +24,7 @@ test-rpm
   binary rpms
 * upload binary rpms to packagecloud repo
 * try install binary rpm by using the repository and run a simple test
+
 
 
 
