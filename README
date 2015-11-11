@@ -1,10 +1,35 @@
-Problems:
-* rpm and deb releases are treated differently:
-  - rpm: source rpm
-  - deb: binary deb
+Configuration:
+* See journal/CMakeLists.txt for an example
+* Two main blocks of code needed
+  - block #1
+"""
+# packaging with the help of docker and packagecloud
+# package repository at packagecloud
+set (PKGCLOUD_USERNAME "danse")
+set (PKGCLOUD_REPO "ins")
+# dependencies
+set (DOCKER_PKGING_DEPS_DEB "danse.ins journal")
+set (DOCKER_PKGING_DEPS_RPM "danse.ins journal")
+set (DOCKER_PKGING_TEST_SRPM ". /opt/danse/bin/setup-danse.sh && python -c 'import pyre; print pyre'")
+set (DOCKER_PKGING_TEST_RPM ${DOCKER_PKGING_TEST_SRPM})
+set (DOCKER_PKGING_TEST_DEB ${DOCKER_PKGING_TEST_SRPM})
+"""
+  - block #2
+"""
+# docker folder for build and test packaging artifacts
+execute_process(
+  COMMAND rm -rf docker
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  )
+execute_process(
+  COMMAND git clone https://github.com/danse-inelastic/packaging-use-docker docker
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  )
+add_subdirectory(docker)
+"""
 
 
-Two major commands:
+Usage:
 
  $ make test-deb
  $ make test-rpm
@@ -24,6 +49,14 @@ test-rpm
   binary rpms
 * upload binary rpms to packagecloud repo
 * try install binary rpm by using the repository and run a simple test
+
+
+
+
+Problems:
+* rpm and deb releases are treated differently:
+  - rpm: source rpm
+  - deb: binary deb
 
 
 
