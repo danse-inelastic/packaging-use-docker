@@ -51,7 +51,7 @@ add_dependencies(upload-rpms test-srpm)
 
 add_custom_target( 
   test-rpm
-  COMMAND bash upload
+  COMMAND bash run
   WORKING_DIRECTORY test-rpm
   )
 add_dependencies(test-rpm upload-rpms)
