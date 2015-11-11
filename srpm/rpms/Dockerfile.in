@@ -1,7 +1,0 @@
-FROM ${DOCKER_ORG_NAME}/${PKG_NAME}-srpm
-
-MAINTAINER "Jiao Lin <jiao.lin@gmail.com>"
-
-WORKDIR /work/build
-RUN rpmbuild --rebuild /SRPMS/${PKG_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.src.rpm
-RUN find "~/rpm*"

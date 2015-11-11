@@ -1,0 +1,7 @@
+FROM ${DOCKER_ORG_NAME}/${PKG_NAME}-srpm
+
+MAINTAINER "Jiao Lin <jiao.lin@gmail.com>"
+
+RUN yum install -y curl
+RUN curl -s https://packagecloud.io/install/repositories/${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/script.rpm.sh | bash
+RUN yum install -y ${PKG_NAME}
