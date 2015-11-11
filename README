@@ -1,3 +1,28 @@
+To major commands:
+
+ $ make test-deb
+ $ make test-rpm
+
+
+test-deb:
+* prepare the environment for building
+* make a debian package
+* upload the pkg to packagecloud repository
+* try install it by using the repository and run a simple test
+
+test-rpm
+* prepare the environment for building srpm
+* make a srpm package
+* upload the srpm pkg to packagecloud repository
+* obtain srpm from repository, and run rpmbuild to create
+  binary rpms
+* upload binary rpms to packagecloud repo
+* try install binary rpm by using the repository and run a simple test
+
+
+
+Old documentation:
+
 To build src rpm:
 
  $ git clone <repo>/<pkg>
