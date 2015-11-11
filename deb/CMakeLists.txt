@@ -1,5 +1,8 @@
 # docker 
 
+configure_file(init/Dockerfile init/Dockerfile)
+configure_file(init/run.in init/run)
+
 configure_file(prepare/Dockerfile prepare/Dockerfile)
 configure_file(prepare/run.in prepare/run)
 
@@ -11,10 +14,17 @@ configure_file(test/Dockerfile.in test/Dockerfile)
 configure_file(test/run.in test/run)
 
 add_custom_target( 
+  build-deb-init
+  COMMAND bash run
+  WORKING_DIRECTORY init
+  )
+
+add_custom_target( 
   build-deb-deps
   COMMAND bash run
   WORKING_DIRECTORY prepare
   )
+add_dependencies(build-deb-deps build-deb-init)
 
 # output under ..../build/DEB
 add_custom_target( 
