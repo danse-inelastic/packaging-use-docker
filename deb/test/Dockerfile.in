@@ -6,4 +6,5 @@ RUN apt-get install curl
 RUN curl -s https://packagecloud.io/install/repositories/${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/script.deb.sh | bash
 RUN apt-get install ${PKG_NAME}
 
+${DOCKER_PKGING_PREPARE_FOR_TEST_DEB}
 RUN ${DOCKER_PKGING_TEST_DEB}

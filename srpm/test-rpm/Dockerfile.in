@@ -6,4 +6,5 @@ RUN yum install -y curl
 RUN curl -s https://packagecloud.io/install/repositories/${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/script.rpm.sh | bash
 RUN yum install -y ${PKG_NAME}
 
+${DOCKER_PKGING_PREPARE_FOR_TEST_RPM}
 RUN ${DOCKER_PKGING_TEST_RPM}
