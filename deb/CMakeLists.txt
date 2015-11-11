@@ -34,15 +34,16 @@ add_custom_target(
   )
 add_dependencies(build-deb build-deb-deps)
 
-add_custom_target( 
-  test-deb
-  COMMAND bash run
-  WORKING_DIRECTORY test
-  )
-
 add_custom_target(
   upload-deb
   COMMAND bash upload
   WORKING_DIRECTORY build
   )
 add_dependencies(upload-deb build-deb)
+
+add_custom_target( 
+  test-deb
+  COMMAND bash run
+  WORKING_DIRECTORY test
+  )
+add_dependencies(test-deb upload-deb)
