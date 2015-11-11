@@ -1,10 +1,5 @@
 # docker 
 
-# by default, use master branch
-if ("${GITHUB_BRANCH}" strequal "")
-  set(GITHUB_BRANCH "master")
-endif()
-
 configure_file(init/Dockerfile init/Dockerfile)
 configure_file(init/run.in init/run)
 
