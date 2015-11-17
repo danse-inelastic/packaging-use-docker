@@ -11,6 +11,7 @@ WORKDIR /work
 RUN mkdir build
 WORKDIR /work/build
 RUN cmake ../src -DCMAKE_INSTALL_PREFIX=/opt/danse -DDEPLOYMENT_PREFIX=/opt/danse
+RUN ${DOCKER_PKGING_BUILDSTEP_BUILDCMD}
 RUN make package
 RUN mkdir DEB
 RUN mv *.deb DEB/
