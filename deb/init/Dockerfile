@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ${DOCKER_PKGING_DEB_DIST_NAME}:${DOCKER_PKGING_DEB_DIST_VERSION}
 
 MAINTAINER "Jiao Lin <jiao.lin@gmail.com>"
 
