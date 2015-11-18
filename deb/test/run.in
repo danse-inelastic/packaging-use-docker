@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-deb-test
+IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-deb-test:${DOCKER_PKGING_DEB_DIST_NAME}-${DOCKER_PKGING_DEB_DIST_VERSION}
 docker build -t $IMG --no-cache . \
 #    && docker run -t $IMG find /opt/danse
