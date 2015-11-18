@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
 # package cloud change the name of the deb pkg
-package_cloud yank ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/ubuntu/trusty ${PKG_NAME}_${VERSION}_amd64.deb
-package_cloud push ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/ubuntu/trusty DEB/${PKG_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.x86_64.deb
-
+package_cloud yank ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/${DOCKER_PKGING_DEB_DIST_NAME}/${DOCKER_PKGING_DEB_DIST_VERSION} ${PKG_NAME}_${VERSION}_amd64.deb
+package_cloud push ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/${DOCKER_PKGING_DEB_DIST_NAME}/${DOCKER_PKGING_DEB_DIST_VERSION} DEB/${PKG_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.x86_64.deb

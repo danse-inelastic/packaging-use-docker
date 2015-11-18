@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 sudo rm -rf DEB
-IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-deb
+IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-deb-${DOCKER_PKGING_DEB_DIST_NAME}-${DOCKER_PKGING_DEB_DIST_VERSION}
 docker build -t $IMG --no-cache .
 docker run -v $PWD:/OUTPUT $IMG mv /work/build/DEB /OUTPUT
