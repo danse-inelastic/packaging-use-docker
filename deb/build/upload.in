@@ -15,5 +15,7 @@ cmd1 = "package_cloud yank ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/${DOCKER_PKGING
 cmd2 = "package_cloud push ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/${DOCKER_PKGING_DEB_DIST_NAME}/%s DEB/${PKG_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.x86_64.deb" % distr_name
 
 import subprocess as sp
-sp.Popen("%s; %s" % (cmd1, cmd2))
-
+p = sp.Popen("%s; %s" % (cmd1, cmd2), shell=True)
+rt = p.wait()
+import sys
+sys.exit(rt)

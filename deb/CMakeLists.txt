@@ -36,7 +36,7 @@ add_dependencies(build-deb build-deb-deps)
 
 add_custom_target(
   upload-deb
-  COMMAND bash upload
+  COMMAND python upload
   WORKING_DIRECTORY build
   )
 add_dependencies(upload-deb build-deb)
