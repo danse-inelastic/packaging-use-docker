@@ -6,9 +6,9 @@ string(TOLOWER "${DOCKER_PKGING_RPM_DIST_NAME}" DOCKER_FROM_IMG_NAME)
 # fedora: fedora
 # centos: el (enterprise linux)
 set(PKGCLOUD_DIST_NAME "${DOCKER_PKGING_RPM_DIST_NAME}")
-if ("${DOCKER_PKGING_RPM_DIST_NAME}" EQUAL "centos")
+if ("${DOCKER_PKGING_RPM_DIST_NAME}" STREQUAL "centos")
   set(PKGCLOUD_DIST_NAME "el")
-endif ("${DOCKER_PKGING_RPM_DIST_NAME}" EQUAL "centos")
+endif ("${DOCKER_PKGING_RPM_DIST_NAME}" STREQUAL "centos")
 
 configure_file(init/Dockerfile init/Dockerfile)
 configure_file(init/run.in init/run)
