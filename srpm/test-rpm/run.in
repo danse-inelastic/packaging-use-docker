@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-rpm-test
+IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-${DOCKER_PKGING_RPM_DIST_NAME}-${DOCKER_PKGING_RPM_DIST_VERSION}-rpm-test
 docker build -t $IMG --no-cache . \
 #    && docker run -t $IMG find /opt/danse

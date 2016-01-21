@@ -1,4 +1,4 @@
-FROM fedora:21
+FROM ${DOCKER_PKGING_RPM_DIST_NAME}:${DOCKER_PKGING_RPM_DIST_VERSION}
 
 MAINTAINER "Jiao Lin <jiao.lin@gmail.com>"
 

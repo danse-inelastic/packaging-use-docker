@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 sudo rm -rf RPMS
-IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-srpm-test
+IMG=${DOCKER_ORG_NAME}/${PKG_NAME}-${DOCKER_PKGING_RPM_DIST_NAME}-${DOCKER_PKGING_RPM_DIST_VERSION}-srpm-test
 docker build -t $IMG --no-cache .
 docker run -v $PWD:/OUTPUT $IMG mv /root/rpmbuild/RPMS /OUTPUT
