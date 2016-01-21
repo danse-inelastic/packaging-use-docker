@@ -31,7 +31,15 @@ add_subdirectory(docker)
 
 Usage:
 
+For debian
  $ make test-deb
+
+For rpm
+ $ cmake ..
+or
+ $ cmake -D DOCKER_PKGING_RPM_DIST_NAME=centos -D DOCKER_PKGING_RPM_DIST_VERSION=7 ..
+
+and then
  $ make test-rpm
 
 

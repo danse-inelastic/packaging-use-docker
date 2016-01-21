@@ -18,6 +18,9 @@ if ("${DOCKER_PKGING_DEB_DIST_NAME}" STREQUAL "")
 endif()
 
 # by default, rpm is built using fedora:21
+# choices:
+# - fedora
+# - centos
 if ("${DOCKER_PKGING_RPM_DIST_NAME}" STREQUAL "")
   set(DOCKER_PKGING_RPM_DIST_NAME "fedora")
   set(DOCKER_PKGING_RPM_DIST_VERSION "21")
