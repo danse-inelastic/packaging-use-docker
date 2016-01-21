@@ -1,5 +1,7 @@
 # docker 
 
+string(TOLOWER "${DOCKER_PKGING_RPM_DIST_NAME}" DOCKER_FROM_IMG_NAME)
+
 configure_file(init/Dockerfile init/Dockerfile)
 configure_file(init/run.in init/run)
 
