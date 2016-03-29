@@ -32,6 +32,11 @@ add_subdirectory(docker)
 Usage:
 
 For debian
+ $ cmake ..
+or
+ $ cmake -D DOCKER_PKGING_DEB_DIST_NAME=ubuntu -D DOCKER_PKGING_DEB_DIST_VERSION=14.04 ..
+
+and then
  $ make test-deb
 
 For rpm
